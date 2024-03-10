@@ -1,7 +1,10 @@
+import LandingPage from "../components/LandingPageScreen";
+import Footer from "../components/FooterScreen";
 export default function Home() {
   return (
     <>
-    <p>Landing Page</p>
+    <LandingPage />
+    <Footer />
     </>
   );
 }

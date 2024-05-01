@@ -2,7 +2,6 @@ import { useState } from "react";
 import Loader from "./Loader";
 import Modal from "./Modal";
 import Link from "next/link";
-import Image from "next/image";
 
 function FusionPage() {
   const [image1DataUrl, setImage1DataUrl] = useState(null);
@@ -138,7 +137,7 @@ function FusionPage() {
           }?${new Date().getTime()}`
         );
         setIsLoading(false);
-      }, 15000);
+      }, 1000);
     } catch (error) {
       console.error("Error:", error.message);
       setModalData({
@@ -167,7 +166,7 @@ function FusionPage() {
     <>
       <div
         className="bg-cover bg-center bg-opacity-70"
-        style={{ backgroundImage: 'url("bg-image.jpg")' }}
+        style={{ backgroundImage: 'url("qc.webp")' }}
       >
         <div className="bg-black bg-opacity-80">
           <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-8 mb-12">
@@ -194,7 +193,7 @@ function FusionPage() {
                       </label>
                     </div>
                     {image1DataUrl ? (
-                      <Image
+                      <img
                         height={250}
                         width={250}
                         src={image1DataUrl}
@@ -202,10 +201,10 @@ function FusionPage() {
                         className="mt-2 mb-4 border-2 border-gray-300 rounded-md"
                       />
                     ) : (
-                      <Image
+                      <img
                         height={250}
                         width={250}
-                        src={"/assets/noImage.jpg"}
+                        src={"noImage.jpg"}
                         alt="Image 1"
                         className="mt-2 mb-4 border-2 border-gray-300 rounded-md"
                       />
@@ -235,7 +234,7 @@ function FusionPage() {
                     </div>
 
                     {image2DataUrl ? (
-                      <Image
+                      <img
                         height={250}
                         width={250}
                         src={image2DataUrl}
@@ -243,10 +242,10 @@ function FusionPage() {
                         className="mt-2 mb-4 border-2 border-gray-300 rounded-md"
                       />
                     ) : (
-                      <Image
+                      <img
                         height={250}
                         width={250}
-                        src={"/assets/noImage.jpg"}
+                        src={"noImage.jpg"}
                         alt="Image 2"
                         className="mt-2 mb-4 border-2 border-gray-300 rounded-md"
                       />
@@ -277,7 +276,7 @@ function FusionPage() {
                       Fused Image Type: .jpg
                     </p>
                     {fusedImage1To2DataUrl ? (
-                      <Image
+                      <img
                         height={250}
                         width={250}
                         src={fusedImage1To2DataUrl}
@@ -285,10 +284,10 @@ function FusionPage() {
                         className="mt-2 mb-4 border-2 border-gray-300 rounded-md"
                       />
                     ) : (
-                      <Image
+                      <img
                         height={250}
                         width={250}
-                        src={"/assets/noImage.jpg"}
+                        src={"noImage.jpg"}
                         alt="Image 1"
                         className="mt-2 mb-4 border-2 border-gray-300 rounded-md"
                       />
@@ -312,7 +311,7 @@ function FusionPage() {
                       Fused Image Type: .jpg
                     </p>
                     {fusedImage2To1DataUrl ? (
-                      <Image
+                      <img
                         height={250}
                         width={250}
                         src={fusedImage2To1DataUrl}
@@ -320,10 +319,10 @@ function FusionPage() {
                         className="mt-2 mb-4 border-2 border-gray-300 rounded-md"
                       />
                     ) : (
-                      <Image
+                      <img
                         height={250}
                         width={250}
-                        src={"/assets/noImage.jpg"}
+                        src={"noImage.jpg"}
                         alt="Image 2"
                         className="mt-2 mb-4 border-2 border-gray-300 rounded-md"
                       />
@@ -345,27 +344,23 @@ function FusionPage() {
             <div className=" p-4 text-justify">
               {fusedImage2To1DataUrl ? (
                 <>
-                  <p className="text-base bg-green-700 p-10 text-center">
-                    <p className="text-3xl text-white font-bold">
+                  <p className="text-base bg-green-900 p-4 text-center rounded-md">
+                    <p className="text-3xl text-white font-bold  ">
                       {" "}
                       Image Fusion Done{" "}
                     </p>
-                    <p className="text-base bg-gray-200 p-8 mt-4">
-                      Our Images has been fused succesfuly to prosuce two images
-                      which containes the halfs of the two disease.Let see if
-                      our model will be able to oredict the classes of the
-                      disease in the images really well. That will the final
-                      stgae of our project. Download the images and uplaod them
-                      on the predict pgae to see our model in motion.
-                      <div className="flex justify-center mt-3">
-                        <Link
-                          href="/predict"
-                          className="block w-full text-center rounded bg-red-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-red-700 focus:outline-none focus:ring active:bg-red-500 sm:w-auto"
-                        >
-                          Predict Now
-                        </Link>
-                      </div>
+                    <p className="text-base bg-gray-200 p-10">
+                      Image splitting and fusion has been successfully
+                      completed. Download and proceeed to Prediction
                     </p>
+                    <div className="flex justify-center mt-3">
+                      <Link
+                        href="/predict"
+                        className="block w-full text-center rounded bg-red-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-red-700 focus:outline-none focus:ring active:bg-red-500 sm:w-auto"
+                      >
+                        Predict Now
+                      </Link>
+                    </div>
                   </p>
                 </>
               ) : (
@@ -374,26 +369,59 @@ function FusionPage() {
                     About Image Fusion
                   </p>
                   <p className="text-base bg-gray-200 p-10">
-                    Contrary to popular belief, Lorem Ipsum is not simply random
-                    text. It has roots in a piece of classical Latin literature
-                    from 45 BC, making it over 2000 years old. Richard
-                    McClintock, a Latin professor at Hampden-Sydney College in
-                    Virginia, looked up one of the more obscure Latin words,
-                    consectetur, from a Lorem Ipsum passage, Contrary to popular
-                    belief, Lorem Ipsum is not simply random text. It has roots
-                    in a piece of classical Latin literature from 45 BC, making
-                    it over 2000 years old. Richard McClintock, a Latin
-                    professor at Hampden-Sydney College in Virginia, looked up
-                    one of the more obscure Latin words, consectetur, from a
-                    Lorem Ipsum passage, Contrary to popular belief, Lorem Ipsum
-                    is not simply random text. It has roots in a piece of
-                    classical Latin literature from 45 BC, making it over 2000
-                    years old. Richard McClintock, a Latin professor at
-                    Hampden-Sydney College in Virginia, looked up one of the
-                    more obscure Latin words, consectetur, from a Lorem Ipsum
-                    passage, a Latin professor at Hampden-Sydney College in
-                    Virginia, looked up one of the more obscure Latin words,
-                    consectetur, from a Lorem Ipsum passage,
+                    Data Fusion represents a groundbreaking paradigm in data
+                    analysis, facilitating the integration of disparate datasets
+                    to yield comprehensive insights and facilitate informed
+                    decision-making. Its application extends far beyond
+                    traditional boundaries, offering a multifaceted approach to
+                    understanding complex phenomena across various domains. In
+                    agricultural research, particularly in the context of Tomato
+                    Disease studies, the need for Data Fusion is pronounced.
+                    Tomatoes, being a cornerstone of global agriculture, are
+                    susceptible to various diseases that can devastate yields if
+                    not properly managed. Given the intricate interplay of
+                    environmental factors, plant physiology, and disease
+                    pathology, a holistic understanding is imperative for
+                    effective disease management strategies. By leveraging Data
+                    Fusion techniques, researchers can integrate diverse
+                    datasets encompassing environmental conditions, plant health
+                    indicators, and disease prevalence data. This comprehensive
+                    approach enables a deeper understanding of the complex
+                    interactions between various factors influencing disease
+                    development and spread. For instance, by combining satellite
+                    imagery to assess environmental conditions, sensor data to
+                    monitor plant health parameters, and historical disease
+                    incidence records, researchers can identify patterns and
+                    correlations that may be obscured when analyzing individual
+                    datasets in isolation. Moreover, Data Fusion enhances the
+                    accuracy and reliability of disease detection and diagnosis.
+                    By synthesizing information from multiple sources, including
+                    visual symptoms observed in plant images, molecular markers,
+                    and environmental variables, researchers can develop robust
+                    disease classification models with higher precision and
+                    recall rates. This not only aids in early detection and
+                    timely intervention but also minimizes misdiagnosis and
+                    false positives, thereby optimizing disease management
+                    strategies and mitigating crop losses. Furthermore, Data
+                    Fusion fosters collaboration and knowledge sharing among
+                    researchers, agronomists, and other stakeholders involved in
+                    tomato disease research. By integrating insights from
+                    diverse disciplines such as agronomy, plant pathology, and
+                    data science, interdisciplinary teams can leverage their
+                    collective expertise to tackle complex challenges more
+                    effectively. This collaborative approach not only
+                    accelerates the pace of scientific discovery but also
+                    facilitates the translation of research findings into
+                    practical solutions that benefit farmers and agricultural
+                    communities. In summary, Data Fusion plays a pivotal role in
+                    advancing research on tomato diseases by enabling a holistic
+                    understanding of the complex interactions between
+                    environmental factors, plant health, and disease dynamics.
+                    By integrating diverse datasets and fostering
+                    interdisciplinary collaboration, Data Fusion enhances the
+                    accuracy, reliability, and effectiveness of disease
+                    management strategies, ultimately contributing to the
+                    sustainability and resilience of agricultural systems.
                   </p>
                 </>
               )}

@@ -122,7 +122,7 @@ function AboutAuthorPage() {
                     Ezhil Kalaimannan, and Caroline John, Kalinga Institute of
                     Industrial Technology, India and University of West Florida,
                     USA (ITEORY 2023)
-                    Link: <a href = "https://ijcionline.com/abstract/12723ijci03" target="_blank" > https://ijcionline.com/abstract/12723ijci03 </a>
+                    Link: <a href = "https://ijcionline.com/abstract/12723ijci03" target="_blank" rel="noreferrer" > https://ijcionline.com/abstract/12723ijci03 </a>
                     <li>
                       <li>
                         • Enhancing Network Security Through Proactive Anomaly
@@ -130,7 +130,7 @@ function AboutAuthorPage() {
                         and KNearest Neighbours Algorithm, Patrick Ansah, Sumit
                         Teterave,PhD, Ezhil Kalaimannan, Ph.D (He/Hlm) , Bibhuti
                         Bhusan Dash and Caroline John, Ph.D , ICSC2023
-                        Link: <a href="https://ieeexplore.ieee.org/document/10349990" target="_blank">https://ieeexplore.ieee.org/document/10349990</a>
+                        Link: <a href="https://ieeexplore.ieee.org/document/10349990" target="_blank" rel="noreferrer">https://ieeexplore.ieee.org/document/10349990</a>
                       </li>
                       <li>
                         • Fortifying Network Security: Pioneering Digital Twin
